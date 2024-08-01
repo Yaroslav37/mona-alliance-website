@@ -1,5 +1,5 @@
 :root {
-    --bg-color: #f7f7ff;
+    --bg-color: #f9f9f9;
     --main-color: white;
     --secondary-color: #213966;
     font-size: 18px;
@@ -64,6 +64,7 @@ section {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+  border-radius: 3px;
 }
 
 @media (max-width: 450px) {
@@ -80,14 +81,28 @@ section {
 }
 
 .header {
+    width: 70%;
     margin-top: 4vw;
     margin-bottom: 6vw;
     text-align: center;
-    font-size: 2.25rem;
-    font-weight: 600;
+    font-size: 2rem;
+    font-weight: 700;
     margin-left: auto;
     margin-right: auto;
 }
+
+.header-contacts {
+    width: 100%;
+    margin-top: 3vw;
+    margin-bottom: 3vw;
+    font-size: 2rem;
+    padding-left: 5%;
+    font-weight: 700;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Навбар */
 
 /* Навбар */
 
@@ -97,7 +112,7 @@ section {
     display: flex;
     justify-content: space-between; /* Расположить элементы по краям контейнера */
     align-items: center; /* Центрирование по вертикали */
-    height: 100px;
+    height: 120px;
 }
 
 .navbar .logo {
@@ -111,29 +126,31 @@ section {
     display: flex;
     gap: 20px; /* Промежуток между элементами */
     align-items: center; /* Центрирование по вертикали */
+    display: block;
 }
 
 .navbar .right-side-part img {
     height: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .navbar .right-side-part .left-column {
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Максимальное расстояние между строками */
 }
 
 .navbar .right-side-part .left-column .navbar-text {
     font-size: 1.5rem;
     font-family: 'Sansation Light';
     text-align: end;
-    text-decoration: underline;
 }
 
 .navbar-number {
     font-size: 1.5rem;
-    font-family: 'Sansation Light';
+    font-family: 'Montserrat';
     text-align: end;
 }
 
@@ -141,6 +158,14 @@ section {
 @media (max-width: 950px) {
     .navbar {
         height: 75px; /* Высота навбара увеличивается на маленьких экранах */
+    }
+
+    .navbar .right-side-part .left-column .navbar-text {
+        font-size: 1.2rem;
+    }
+    
+    .navbar-number {
+        font-size: 1.2rem;
     }
 }
 
@@ -150,6 +175,8 @@ section {
         height: 50px; /* Высота навбара увеличивается на маленьких экранах */
     }
 }
+
+/* Конец навбара */
 
 /* Конец навбара */
 
@@ -204,7 +231,8 @@ section {
 /* Медиазапрос для маленьких экранов */
 @media (max-width: 450px) {
     .main-banner {
-        height: 350px;
+        height: 300px;
+        background: url('./images/cropped_back.png') no-repeat center center;
     }
 }
 
@@ -256,19 +284,26 @@ section {
 }
 
 .container-for-services .info-element .title-of-service {
-    font-size: 1.25rem;
-    font-weight: 700;
+    font-size: 1.4rem;
+    font-weight: 900;
 }
 
 .container-for-services .info-element .usual-text-of-service {
-    font-size: 1rem;
+    font-size: 1.2rem;
 }
 
 /* Медиазапрос для маленьких экранов */
+
+@media (max-width: 950px) {
+    .container-for-services .column-for-line .vertical-line {
+        height: 850px;
+    }
+}
+
 @media (max-width: 450px) {
     .container-for-services .column-for-line .vertical-line {
         width: 1px;
-        height: 750px;
+        height: 850px;
     }
     
     .container-for-services .info-element {
@@ -381,7 +416,7 @@ section {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    background: url('./images/back2.jpg') no-repeat center center;
+    background: url('./images/2.png') no-repeat center center;
     background-size: cover; /* Заполнение фона изображением */
     height: 100%;
     width: 100%;
@@ -391,12 +426,13 @@ section {
 .container-for-call .call-column {
     display: flex;
     flex-direction: column;
+    text-align: start;
     align-items: start;
     justify-content: space-between;
-    margin-right: 45%;
-    margin-left: 15%;
+    margin-right: 55%;
+    margin-left: 5%;
     width: 40%;
-    gap: 10vw;
+    gap: 7vw;
 }
 
 .container-for-call .call-column h2 {
@@ -404,26 +440,20 @@ section {
     font-weight: 500;
 }
 
-@media (max-width: 450px) {
+@media (max-width: 950px) {
     .container-for-call {
-        height: 300px;
-    }
-
-    .container-for-call .call-column {
-        width: 65%;
-        margin-right: 30%;
-        margin-left: 5%;
+        height: 350px;
     }
 }
 
-@media (max-width: 950px) {
+@media (max-width: 450px) {
     .container-for-call {
-        height: 400px;
+        height: 250px;
     }
 
     .container-for-call .call-column {
-        width: 65%;
-        margin-right: 30%;
+        width: 45%;
+        margin-right: 50%;
         margin-left: 5%;
     }
 }
@@ -431,40 +461,6 @@ section {
 /* Конец заказа звонка */
 
 
-/* карта виджет */
-
-.map {
-    position:relative;
-    overflow:hidden;
-    width:80%;
-    margin-left: 10%;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    border-radius: 5%;
-}
-
-.map a {
-    color: #eee;
-    font-size: 0.75rem;
-    position: absolute;
-}
-
-.map a:first-child {
-    top: 0px;
-}
-
-.map a:last-child {
-    top: 14px;
-}
-
-.map iframe {
-    width:100%;
-    height:400px;
-    position:relative;
-    border: none;
-}
-
-/* карта виджет конец*/
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
 
@@ -472,7 +468,7 @@ section {
     background-color: var(--secondary-color);
     color: white;
     text-align: center;
-    font-size: 18.5px;
+    font-size: 1.5rem;
     margin-top: 40px;
     height: 50px;
     display: flex;
@@ -567,28 +563,28 @@ section {
 
 /* Конец формы */
 
+/* Начало контактов */
+
 .contact-container {
+    width: 100%;
     display: flex;
     flex-direction: column;
-}
-
-.contact-container h1 {
-    margin-left: 10%;
-    font-size: 40.5px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    height: 500px;
+    justify-content: space-between;
 }
 
 .contact-info {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    padding: 0 10%;
-    box-sizing: border-box;
+    gap: 20px;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 1%;
 }
 
 .contact-info div p {
-    font-size: 18.5px;
+    font-size: 1.25rem;
 }
 
 .contact-info div p:first-child {
@@ -596,59 +592,90 @@ section {
 }
 
 .contact-info div a {
-    font-size: 18.5px;
+    font-size: 1rem;
     font-weight: bold;
     color: black;
     text-decoration: none;
 }
 
 .contact-info div a:hover {
-    color: blue;
+    color: var(--secondary-color);
 }
 
 .address {
     align-self: flex-start;
-    margin-left: 10%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 1%;
 }
 
 .address p {
-    font-size: 18.5px;
+    font-size: 1.25rem;
 }
 
 .address p:first-child {
     font-weight: bold;
-    font-size: 18.5px;
+    font-size: 1.5rem;
 }
 
-@media (max-width: 1200px) {
+/* Медиазапрос для маленьких экранов */
+@media (max-width: 950px) {
+}
+
+/* Медиазапрос для маленьких экранов */
+@media (max-width: 450px) {
+    .contact-container {
+        height: 550px;
+    }
+
     .contact-info {
         flex-direction: column;
-        font-size: 15px;
-    }
-
-    .contact-info div {
-        margin-top: 20px;
-        margin-bottom: 20px;
-    }
-
-    .contact-info div p {
-        font-size: 15px;
-    }
-    
-    .footer{
-        font-size: 15px;
-    }
-    
-    .address p {
-        font-size: 15px;
-    }
-
-    .contact-container h1 {
-        margin-left: 10%;
-        font-size: 22.5px;
         margin-top: 10px;
         margin-bottom: 10px;
     }
-    
+
+    .address {
+        margin-top: 10px;
+    }
 }
 
+/* Конец контактов */
+
+
+/* Карта виджет */
+
+/* карта виджет */
+
+.map {
+    position:relative;
+    overflow:hidden;
+    width:90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 15px;
+}
+
+.map a {
+    color: #eee;
+    font-size: 0.75rem;
+    position: absolute;
+}
+
+.map a:first-child {
+    top: 0px;
+}
+
+.map a:last-child {
+    top: 14px;
+}
+
+.map iframe {
+    width:100%;
+    height:400px;
+    position:relative;
+    border: none;
+}
+
+/* Карта виджет конец*/
